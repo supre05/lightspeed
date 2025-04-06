@@ -1,0 +1,141 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Containers */
+.signup-container,
+.chat-container,
+.matcher-container {
+    background-color: #fefefe;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Headings */
+h1 {
+    color: #FF6F61;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #FF6F61;
+    outline: none;
+}
+
+/* Button */
+button {
+    background-color: #FF6F61;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e85b50;
+}
+
+/* Chat Page Specific */
+#chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.user-msg {
+    text-align: right;
+    color: #FF6F61;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bot-msg {
+    text-align: left;
+    color: #444;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Resume Matcher Page */
+textarea#job-description {
+    height: 100px;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.result-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.result-card h3 {
+    color: #FF6F61;
+    margin-bottom: 5px;
+}
+
+.result-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}

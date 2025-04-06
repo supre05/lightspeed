@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Matcher</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🎭 Resume Matcher</h1>
+    <textarea id="jobDesc" rows="5" placeholder="Enter job description..."></textarea>
+    <button onclick="matchProfiles()">Match</button>
+    <div id="profileCards"></div>
+
+    <script>
+        let profiles = [], currentIndex = 0;
+
+        function matchProfiles() {
+            const desc = document.getElementById("jobDesc").value;
+            fetch("/match", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ job_description: desc })
+            })
+            .then(res => res.json())
+            .then(data => {
+                profiles = data;
+                currentIndex = 0;
+                showProfile();
+            });
+        }
+
+        function showProfile() {
+            const card = document.getElementById("profileCards");
+            card.innerHTML = "";
+            if (currentIndex < profiles.length) {
+                const p = profiles[currentIndex];
+                const div = document.createElement("div");
+                div.className = "card";
+                if (currentIndex === 0) div.classList.add("best");
+                div.innerHTML = `<h2>${p.name} - ${p.profession}</h2>
+                                 <p><strong>Experience:</strong> ${p.experience_years} years</p>
+                                 <p><strong>Location:</strong> ${p.location}</p>
+                                 <p><strong>Skills:</strong> ${p.skills.join(", ")}</p>
+                                 <p><strong>Languages:</strong> ${p.languages.join(", ")}</p>
+                                 <p><strong>Match Score:</strong> ${p.match_score}</p>
+                                 <button onclick="nextProfile()">Next</button>`;
+                card.appendChild(div);
+            }
+        }
+
+        function nextProfile() {
+            currentIndex++;
+            showProfile();
+        }
+    </script>
+</body>
+</html>

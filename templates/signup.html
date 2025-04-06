@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Room Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>The Green Room</h1>
+        <form id="signup-form" method="POST" enctype="multipart/form-data" action="/signup">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="userType">I am signing up as:</label>
+            <select id="userType" name="userType" onchange="toggleFields()">
+                <option value="individual">Individual</option>
+                <option value="organization">Organization</option>
+            </select>
+
+            <div id="individual-fields" class="fields">
+                <label for="cv">Upload your CV (PDF):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.txt">
+                <br>
+                <label for="keywords">Tag your interests:</label>
+                <input type="text" id="keywords" name="keywords" placeholder="e.g., Acting, Directing">
+            </div>
+
+            <div id="organization-fields" class="fields">
+                <label for="bio">Upload your Bio:</label>
+                <input type="file" id="bio" name="bio" accept=".pdf,.docx,.txt">
+                <label for="organizationName">Organization Name:</label>
+                <input type="text" id="organizationName" name="organizationName" placeholder="Enter organization name">
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

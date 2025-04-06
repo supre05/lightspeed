@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Talent Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+    #chat {
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      overflow-y: scroll;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 10px;
+    }
+    .message { margin: 10px 0; line-height: 1.4; }
+    .user { text-align: right; }
+    .user .bubble { background-color: #d1e7dd; color: #0f5132; }
+    .agent .bubble { background-color: #e2e3e5; color: #41464b; }
+    .bubble {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 15px;
+      max-width: 80%;
+    }
+    #inputArea {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      gap: 10px;
+    }
+    #userInput {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎬 Virtual Talent Agent</h2>
+  <div id="chat"></div>
+
+  <div id="inputArea">
+    <input id="userInput" placeholder="Ask your agent..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chatDiv = document.getElementById('chat');
+      const userText = input.value.trim();
+
+      if (!userText) return;
+
+      const userMessage = document.createElement('div');
+      userMessage.className = 'message user';
+      userMessage.innerHTML = `<div class="bubble">${userText}</div>`;
+      chatDiv.appendChild(userMessage);
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+
+      input.value = '';
+
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userText })
+      });
+
+      const data = await response.json();
+
+      const agentMessage = document.createElement('div');
+      agentMessage.className = 'message agent';
+      agentMessage.innerHTML = `<div class="bubble">${data.response}</div>`;
+      chatDiv.appendChild(agentMessage);
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>

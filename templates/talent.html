@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Talent Agent</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="talent-container">
+        <h2>🎬 Virtual Talent Agent</h2>
+        <div id="chat"></div>
+        <div>
+            <input id="userInput" placeholder="Ask your agent..." style="width: 70%;">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const chatDiv = document.getElementById('chat');
+            const userText = input.value.trim();
+            if (!userText) return;
+
+            chatDiv.innerHTML += `<div class='message user'><div class='bubble'>${userText}</div></div>`;
+            input.value = '';
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userText })
+            });
+            const data = await response.json();
+            chatDiv.innerHTML += `<div class='message agent'><div class='bubble'>${data.response}</div></div>`;
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

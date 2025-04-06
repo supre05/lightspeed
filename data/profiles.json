@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Ayesha Kapoor",
+    "profession": "Actor",
+    "experience_years": 4,
+    "skills": [
+      "Method Acting",
+      "Voice Modulation",
+      "Improvisation"
+    ],
+    "portfolio_links": [
+      "youtube.com/ayesha_reel"
+    ],
+    "awards": [
+      "Best Debut - Indie Awards 2022"
+    ],
+    "availability": "Available Now",
+    "location": "Mumbai",
+    "job_type": "Freelance",
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "tools": []
+  },
+  {
+    "name": "Rohan Mehta",
+    "profession": "Cinematographer",
+    "experience_years": 6,
+    "skills": [
+      "Lighting",
+      "Camera Movement",
+      "Drone Shooting"
+    ],
+    "portfolio_links": [
+      "vimeo.com/rohan"
+    ],
+    "awards": [],
+    "availability": "In 1 month",
+    "location": "Delhi",
+    "job_type": "Contract",
+    "languages": [
+      "English",
+      "Punjabi"
+    ],
+    "tools": [
+      "RED Camera",
+      "Blackmagic",
+      "Final Cut Pro"
+    ]
+  },
+  {
+    "name": "Sara Ali",
+    "profession": "Editor",
+    "experience_years": 3,
+    "skills": [
+      "Color Grading",
+      "Montage",
+      "Transitions"
+    ],
+    "portfolio_links": [
+      "behance.net/saraedits"
+    ],
+    "awards": [
+      "Best Editor - ShortFest 2023"
+    ],
+    "availability": "Available Now",
+    "location": "Bangalore",
+    "job_type": "Full-time",
+    "languages": [
+      "English",
+      "Kannada"
+    ],
+    "tools": [
+      "Premiere Pro",
+      "DaVinci Resolve"
+    ]
+  },
+  {
+    "name": "Vikram Das",
+    "profession": "Director",
+    "experience_years": 10,
+    "skills": [
+      "Screenwriting",
+      "Blocking",
+      "Casting"
+    ],
+    "portfolio_links": [
+      "imdb.com/vikramdas"
+    ],
+    "awards": [
+      "Best Short - IFFI",
+      "Jury Award - LA Indie"
+    ],
+    "availability": "Available Now",
+    "location": "Mumbai",
+    "job_type": "Freelance",
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "tools": [
+      "Celtx",
+      "Final Draft"
+    ]
+  },
+  {
+    "name": "Priya Nair",
+    "profession": "Makeup Artist",
+    "experience_years": 5,
+    "skills": [
+      "SFX Makeup",
+      "Bridal Looks",
+      "Hair Styling"
+    ],
+    "portfolio_links": [
+      "instagram.com/priyamakeup"
+    ],
+    "awards": [],
+    "availability": "Available Now",
+    "location": "Chennai",
+    "job_type": "Contract",
+    "languages": [
+      "Tamil",
+      "English"
+    ],
+    "tools": []
+  },
+  {
+    "name": "Kunal Verma",
+    "profession": "Sound Designer",
+    "experience_years": 7,
+    "skills": [
+      "Sound Mixing",
+      "Foley",
+      "Field Recording"
+    ],
+    "portfolio_links": [
+      "soundcloud.com/kunalsound"
+    ],
+    "awards": [
+      "Best Soundtrack - Indie Film Fest"
+    ],
+    "availability": "Available Now",
+    "location": "Hyderabad",
+    "job_type": "Full-time",
+    "languages": [
+      "Hindi",
+      "Telugu"
+    ],
+    "tools": [
+      "Pro Tools",
+      "Logic Pro"
+    ]
+  }
+]
